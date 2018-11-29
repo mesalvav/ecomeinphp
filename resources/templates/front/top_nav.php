@@ -20,13 +20,16 @@
                     <li>
                         <a href="login.php">Login</a>
                     </li>
-                          <!--
+                          
                     <li>
                         <a href="admin.php">Admin</a>
                     </li>
-                          -->
+                         
                      <li>
                         <a href="checkout.php">Checkout</a>
+                    </li>
+                     <li>
+                        <a href="contact.php">Contact</a>
                     </li>
                     <li>
                         <a href="/resumep/index.html">Mario Resume</a>

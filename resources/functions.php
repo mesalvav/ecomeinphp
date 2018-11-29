@@ -1,5 +1,25 @@
 <?php
 
+function set_message($msg) {
+    if(!empty($msg)) {
+        $_SESSION['message'] = $msg;
+    } else {
+
+        $msg = "";
+    }
+}
+
+function display_message() {
+    if (isset( $_SESSION['message'])) {
+        echo $_SESSION['message'];
+        unset($_SESSION['message']);
+}
+
+}
+
+
+
+
 function redirect($location) {
     header("Location: $location ");
 
@@ -134,11 +154,14 @@ function get_categories_in_shop_page() {
                     <img src="{$row['product_image']}" alt="">
                     <div class="caption">
                         <h3>{$row['product_title']}</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
+                        <p>{$row['short_desc']}</p>
+                        
+                    </div>
+
+<p>
                             <a href="#" class="btn btn-primary">Buy Now!</a> <a href="item.php?id={$row['product_id']}" class="btn btn-default">More Info</a>
                         </p>
-                    </div>
+
                 </div>
             </div>
 
@@ -149,6 +172,50 @@ DELIMETER;
     
 }
 
+
+function login_user() {
+    if(isset($_POST['submit'])){
+        $username = escape_string(  $_POST['username']);
+        $password = escape_string(   $_POST['password']);
+
+        $query = query("SELECT * FROM users WHERE username = '{$username}' AND password = '{$password}' ");
+
+        confirm($query);
+        
+        if(mysqli_num_rows($query) == 0 ) {
+            set_message("Your Password or Username are wrong");
+                redirect("login.php");
+            }
+       else {
+
+            set_message("Welcome to ADMIN  {$username}");
+           redirect("admin");
+         }
+    }
+}
+
+
+function send_message() {
+
+    if(isset($_POST['submit'])){
+        $to = "miemail@gmail.com";
+        $from_name = $_POST['name'];
+        $subject = $_POST['subject'];
+        $email = $_POST['email'];
+        $message = $_POST['message'];
+        // $_POST['submit'];
+        $headers = "From: {$from_name}  {$email}";
+
+       $result =  mail($to, $subject, $message, $headers);
+
+       if(!$result) {
+           echo "ERROR";
+               } else {
+           echo "SENT";
+       }
+        
+    }
+}
 
 
 
