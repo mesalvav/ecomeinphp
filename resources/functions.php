@@ -72,7 +72,7 @@ function get_products() {
                                 <p>{$row['short_desc']} </p>
                             </div> <!--- end caption --->
                                                                                                                                                       
-                                   <a class="btn btn-primary" target="_blank" href="item.php?id={$row['product_id']}">Add to cart</a>
+                                   <a class="btn btn-primary" target="_blank" href="cart.php?add={$row['product_id']}">Add to cart</a>
 
                                                                                  
                         </div>
@@ -198,7 +198,7 @@ function login_user() {
 function send_message() {
 
     if(isset($_POST['submit'])){
-        $to = "miemail@gmail.com";
+        $to = "mayradenica@gmail.com";
         $from_name = $_POST['name'];
         $subject = $_POST['subject'];
         $email = $_POST['email'];
@@ -209,9 +209,12 @@ function send_message() {
        $result =  mail($to, $subject, $message, $headers);
 
        if(!$result) {
-           echo "ERROR";
+
+           set_message("Sorry we could not send your message");
+           redirect("contact.php");
                } else {
-           echo "SENT";
+           set_message("Your message has beeen sent");
+          
        }
         
     }

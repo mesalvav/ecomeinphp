@@ -8,8 +8,8 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.php">
-                    <img src="https://storage.googleapis.com/fotosbalonpie/slcom.png" width="30" height="30" alt="">
-                </a>
+                    <img src="https://storage.googleapis.com/fotosbalonpie/sball2.jpeg" width="30" height="30" alt="">
+              </a><a class="navbar-brand" href="index.php">Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -22,7 +22,7 @@
                     </li>
                           
                     <li>
-                        <a href="admin.php">Admin</a>
+                        <a href="admin">Admin</a>
                     </li>
                          
                      <li>
@@ -34,7 +34,9 @@
                     <li>
                         <a href="/resumep/index.html">Mario Resume</a>
                     </li>
-
+                     <li>
+                        <a href="phpinfo.php">PHPinfo</a>
+                    </li> 
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

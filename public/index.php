@@ -26,7 +26,10 @@
 
                 <div class="row">
 
-<!--- thumbnail --->
+
+
+
+                          
 <?php get_products();  ?> 
                    
 

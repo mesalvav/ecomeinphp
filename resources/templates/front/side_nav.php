@@ -1,5 +1,5 @@
  <div class="col-md-3">
-                <p class="lead">SoccerLockerOutlet</p>
+                <p class="lead">Clasico Outlet</p>
                 <div class="list-group">
 
                 <?php
