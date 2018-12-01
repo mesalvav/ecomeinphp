@@ -58,7 +58,10 @@ function cart() {
     
     $total = 0;
     $item_quantity = 0;
-
+    $item_name = 1;
+    $item_number = 1;
+    $amount = 1;
+    $quantity = 1;
     
     foreach ($_SESSION as $name => $value) {
 
@@ -66,8 +69,8 @@ function cart() {
 
                     if ( substr($name, 0, 8) == "product_" ){ 
 
-                       //  $length = strlen($name) - 8);
-			  $length = strlen($name - 8);
+                         $length = strlen($name) - 8;
+			 //  $length = strlen($name - 8);
                         $id = substr($name, 8 , $length);
                         
                 
@@ -95,10 +98,21 @@ function cart() {
 <a class="btn btn-danger" href="cart.php?delete={$row['product_id']}"><span class="glyphicon glyphicon-remove"></span></a>
 </tr>
 
+<input type="hidden" name="item_name_{$item_name}" value="{$row['product_title']}">
+<input type="hidden" name="item_number_{$item_number}" value="{$row['product_id']}">
+<input type="hidden" name="amount_{$amount}" value="{$row['product_price']}">
+<input type="hidden" name="quantity_{$quantity}" value="{$value}">
+
 DELIMETER;
 
 
         echo $product;
+
+	$item_name++;
+    $item_number++;
+    $amount++;
+    $quantity++;
+	
     }// while
 
     $_SESSION['item_total'] = $total += $sub;            
