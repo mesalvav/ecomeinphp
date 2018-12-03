@@ -36,7 +36,10 @@
                     </li>
                      <li>
                         <a href="phpinfo.php">PHPinfo</a>
-                    </li> 
+                    </li>
+                     <li>
+                        <a href="phpmyadmin.php">PHPmyadmin</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

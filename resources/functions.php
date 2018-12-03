@@ -72,7 +72,7 @@ function get_products() {
                                 <p>{$row['short_desc']} </p>
                             </div> <!--- end caption --->
                                                                                                                                                       
-                                   <a class="btn btn-primary" target="_blank" href="cart.php?add={$row['product_id']}">Add to cart</a>
+                                   <a class="btn btn-primary" target="_blank" href="../resources/cart.php?add={$row['product_id']}">Add to cart</a>
 
                                                                                  
                         </div>
@@ -188,7 +188,8 @@ function login_user() {
             }
        else {
 
-            set_message("Welcome to ADMIN  {$username}");
+           $_SESSION['username'] = $username;
+           //  set_message("Welcome to ADMIN  {$username}");
            redirect("admin");
          }
     }

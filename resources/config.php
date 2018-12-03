@@ -29,5 +29,6 @@ defined("DB_NAME") ? null : define("DB_NAME", "ecom_db");
 
 
 require_once("functions.php");
+require_once("cart.php");
 
 ?>
